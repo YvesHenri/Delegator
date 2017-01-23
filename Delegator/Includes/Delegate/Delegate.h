@@ -20,20 +20,25 @@ private:
 	using TFunctorSharedPtr = std::shared_ptr<TFunctor>;
 
 public:
-	Delegate() = default;
-	~Delegate() = default;
+	// Creates an unbound (empty) delegate
+	Delegate();
 
-	// Invokes this delegate
-	TReturn invoke(TArgs&&... args);
+	// Creates a delegate from a free/static function
+	Delegate(TReturn(*freeFunction)(TArgs...));
 
-	// Resets this delegate to its initial state (null)
+	// Creates a delegate from a member function
+	template <class TClass>
+	Delegate(TReturn(TClass::*memberFunction)(TArgs...), TClass* instance);
+
+	// Creates a delegate from a member const function
+	template <class TClass>
+	Delegate(TReturn(TClass::*memberFunction)(TArgs...) const, TClass* instance);
+
+	// Resets this delegate to its unboud state (empty)
 	void reset();
 
 	// Resets this delegate to a given delegate's state
 	void reset(Delegate* delegate);
-
-	// Resets this delegate to a given functor of the same type/signature
-	void reset(TFunctor* functor);
 
 	// Resets this delegate to a new free/static function
 	void reset(TReturn(*freeFunction)(TArgs...));
@@ -45,6 +50,9 @@ public:
 	// Resets this delegate to a new member const function
 	template <class TClass>
 	void reset(TReturn(TClass::*memberConstFunction)(TArgs...) const, TClass* instance);
+
+	// Invokes this delegate
+	TReturn invoke(TArgs&&... args);
 
 private:
 	TFunctorSharedPtr m_functor;

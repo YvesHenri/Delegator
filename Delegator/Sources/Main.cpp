@@ -36,10 +36,6 @@ int main()
 
 	{
 		Delegate<void(void)> d1;
-		std::function<void(void)> f1;
-
-		printf("Size: %d \n", sizeof(d1));
-		printf("Size: %d \n", sizeof(f1));
 
 		{
 			Delegate<void(void)> d2;
@@ -53,9 +49,21 @@ int main()
 			d2.reset(&Clazz::staticMemberFunction);
 			d2.invoke();
 			d1.reset(&d2);
+
+			printf("@@@ End of scope 1.1 @@@ \n");
 		}
 
 		d1.invoke();
+
+		printf("@@@ End of scope 1 @@@ \n");
+	}
+
+	{
+		Delegate<void(void)> d1(&Clazz::memberFunction, &clazz);
+
+		d1.invoke();
+
+		printf("@@@ End of scope 2 @@@ \n");
 	}
 
     return getchar();
