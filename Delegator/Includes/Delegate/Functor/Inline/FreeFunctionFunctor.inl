@@ -3,12 +3,6 @@ FreeFunctionFunctor<TReturn(TArgs...)>::FreeFunctionFunctor(const FreeFunction f
 	: m_function(function)
 {}
 
-template <typename TReturn, typename... TArgs>
-bool FreeFunctionFunctor<TReturn(TArgs...)>::operator!()
-{
-	return m_function == nullptr;
-}
-
 //template <typename TReturn, typename... TArgs>
 //bool FreeFunctionFunctor<TReturn(TArgs...)>::operator==(const Functor<TReturn(TArgs...)>& functor)
 //{

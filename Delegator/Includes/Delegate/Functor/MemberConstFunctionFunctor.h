@@ -18,7 +18,6 @@ private:
 public:
 	explicit MemberConstFunctionFunctor(const MemberConstFunction function, const MemberConstInstance instance);
 
-	bool operator !() override;
 	//bool operator == (const Functor& functor) override;
 
 	TReturn operator ()(TArgs&&... args) override;

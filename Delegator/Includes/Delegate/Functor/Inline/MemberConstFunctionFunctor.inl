@@ -7,12 +7,6 @@ MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::MemberConstFunct
 	, m_instance(instance)
 {}
 
-template <class TClass, typename TReturn, typename... TArgs>
-bool MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator!()
-{
-	return m_function == nullptr || m_instance == nullptr;
-}
-
 //template <class TClass, typename TReturn, typename... TArgs>
 //bool MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator==(const Functor<TReturn(TArgs...)>& functor)
 //{

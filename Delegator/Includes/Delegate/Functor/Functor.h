@@ -12,7 +12,8 @@ template <typename TReturn, typename... TArgs>
 class Functor<TReturn(TArgs...)>
 {
 public:
-	virtual bool operator !() = 0;
+	virtual ~Functor() = default;
+
 	//virtual bool operator == (const Functor& functor) = 0;
 
 	virtual TReturn operator()(TArgs&&... args) = 0;
