@@ -15,11 +15,20 @@ MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::~MemberConstFunc
 	printf("--- MemberConstFunctionFunctor ---\n");
 }
 
-//template <class TClass, typename TReturn, typename... TArgs>
-//bool MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator==(const Functor<TReturn(TArgs...)>& functor)
-//{
-//	return true;
-//}
+template <class TClass, typename TReturn, typename... TArgs>
+bool MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator==(const Functor<TReturn(TArgs...)>& functor)
+{
+	try
+	{
+		const MemberConstFunctionFunctor& memberConst = dynamic_cast<const MemberConstFunctionFunctor&>(functor);
+
+		return m_function == memberConst.m_function && m_instance == memberConst.m_instance;
+	}
+	catch (const std::bad_cast&)
+	{
+		return false;
+	}
+}
 
 template <class TClass, typename TReturn, typename... TArgs>
 TReturn MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator()(TArgs&&... args)

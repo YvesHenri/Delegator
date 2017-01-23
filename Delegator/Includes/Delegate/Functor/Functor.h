@@ -14,7 +14,7 @@ class Functor<TReturn(TArgs...)>
 public:
 	virtual ~Functor() = default;
 
-	//virtual bool operator == (const Functor& functor) = 0;
+	virtual bool operator == (const Functor<TReturn(TArgs...)>& functor) = 0;
 
 	virtual TReturn operator()(TArgs&&... args) = 0;
 };

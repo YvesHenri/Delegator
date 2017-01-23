@@ -68,4 +68,17 @@ TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs&&... args)
 	m_functor->operator()(std::forward<TArgs>(args)...);
 }
 
+template <typename TReturn, typename... TArgs>
+bool Delegate<TReturn(TArgs...)>::operator==(const Delegate& delegate)
+{
+	TFunctor* self = m_functor.get();
+	TFunctor* target = delegate.m_functor.get();
+
+	bool areBothEmpty = self == nullptr && target == nullptr;
+	bool areBothValid = self != nullptr && target != nullptr;
+	bool areBothEqual = areBothValid && (*self == *target);
+
+	return areBothEmpty || areBothEqual;
+}
+
 #endif

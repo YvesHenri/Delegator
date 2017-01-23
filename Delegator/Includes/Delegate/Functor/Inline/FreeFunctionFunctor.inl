@@ -14,11 +14,20 @@ FreeFunctionFunctor<TReturn(TArgs...)>::~FreeFunctionFunctor()
 	printf("--- FreeFunctionFunctor ---\n");
 }
 
-//template <typename TReturn, typename... TArgs>
-//bool FreeFunctionFunctor<TReturn(TArgs...)>::operator==(const Functor<TReturn(TArgs...)>& functor)
-//{
-//	return true;
-//}
+template <typename TReturn, typename... TArgs>
+bool FreeFunctionFunctor<TReturn(TArgs...)>::operator==(const Functor<TReturn(TArgs...)>& functor)
+{
+	try
+	{
+		const FreeFunctionFunctor& free = dynamic_cast<const FreeFunctionFunctor&>(functor);
+
+		return m_function == free.m_function;
+	}
+	catch (const std::bad_cast&)
+	{
+		return false;
+	}
+}
 
 template <typename TReturn, typename... TArgs>
 TReturn FreeFunctionFunctor<TReturn(TArgs...)>::operator()(TArgs&&... args)

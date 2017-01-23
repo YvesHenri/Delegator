@@ -54,6 +54,9 @@ public:
 	// Invokes this delegate
 	TReturn invoke(TArgs&&... args);
 
+	// Checks whether both delegates point to the same function
+	bool operator == (const Delegate& delegate);
+
 private:
 	TFunctorSharedPtr m_functor;
 };
