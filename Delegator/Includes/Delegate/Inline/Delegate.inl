@@ -17,6 +17,18 @@ void Delegate<TReturn(TArgs...)>::reset()
 }
 
 template <typename TReturn, typename... TArgs>
+void Delegate<TReturn(TArgs...)>::reset(Delegate* delegate)
+{
+	m_functor = delegate->m_functor;
+}
+
+template <typename TReturn, typename... TArgs>
+void Delegate<TReturn(TArgs...)>::reset(TFunctor* functor)
+{
+	m_functor = functor;
+}
+
+template <typename TReturn, typename... TArgs>
 void Delegate<TReturn(TArgs...)>::reset(TReturn(*freeFunction)(TArgs...))
 {
 	m_functor.reset(new FreeFunctionFunctor<TReturn(TArgs...)>(freeFunction));

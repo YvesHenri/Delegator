@@ -16,6 +16,7 @@ private:
 
 public:
 	explicit FreeFunctionFunctor(const FreeFunction function);
+	~FreeFunctionFunctor();
 
 	//bool operator == (const Functor& functor) override;
 

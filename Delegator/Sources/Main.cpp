@@ -2,9 +2,11 @@
 
 #include "..\Includes\Delegate\Delegate.h"
 
+#pragma region Tests
+
 void freeFunction()
 {
-	printf("freeFunction! \n");
+	printf("> Called freeFunction! \n");
 }
 
 class Clazz
@@ -12,27 +14,43 @@ class Clazz
 public:
 	void memberFunction()
 	{
-		printf("memberFunction! \n");
+		printf("> Called memberFunction! \n");
 	}
 
 	void memberConstFunction() const
 	{
-		printf("memberConstFunction! \n");
+		printf("> Called memberConstFunction! \n");
+	}
+
+	static void staticMemberFunction() {
+		printf("> Called staticMemberFunction! \n");
 	}
 };
 
+#pragma endregion
+
 int main()
 {
-	{
-		Clazz clazz;
-		Delegate<void(void)> d;
+	Clazz clazz;
 
-		d.reset(&freeFunction);
-		d.invoke();
-		d.reset(&Clazz::memberFunction, &clazz);
-		d.invoke();
-		d.reset(&Clazz::memberConstFunction, &clazz);
-		d.invoke();
+	{
+		Delegate<void(void)> d1;
+
+		{
+			Delegate<void(void)> d2;
+
+			d2.reset(&freeFunction);
+			d2.invoke();
+			d2.reset(&Clazz::memberFunction, &clazz);
+			d2.invoke();
+			d2.reset(&Clazz::memberConstFunction, &clazz);
+			d2.invoke();
+			d2.reset(&Clazz::staticMemberFunction);
+			d2.invoke();
+			d1.reset(&d2);
+		}
+
+		d1.invoke();
 	}
 
     return getchar();

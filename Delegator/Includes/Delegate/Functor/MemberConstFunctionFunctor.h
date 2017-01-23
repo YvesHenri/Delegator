@@ -17,6 +17,7 @@ private:
 
 public:
 	explicit MemberConstFunctionFunctor(const MemberConstFunction function, const MemberConstInstance instance);
+	~MemberConstFunctionFunctor();
 
 	//bool operator == (const Functor& functor) override;
 

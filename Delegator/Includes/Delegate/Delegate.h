@@ -16,8 +16,8 @@ template <typename TReturn, typename... TArgs>
 class Delegate<TReturn(TArgs...)> final
 {
 private:
-	using DynamicFunctor = Functor<TReturn(TArgs...)>;
-	using DynamicFunctorPointer = std::shared_ptr<DynamicFunctor>;
+	using TFunctor = Functor<TReturn(TArgs...)>;
+	using TFunctorSharedPtr = std::shared_ptr<TFunctor>;
 
 public:
 	Delegate() = default;
@@ -28,6 +28,12 @@ public:
 
 	// Resets this delegate to its initial state (null)
 	void reset();
+
+	// Resets this delegate to a given delegate's state
+	void reset(Delegate* delegate);
+
+	// Resets this delegate to a given functor of the same type/signature
+	void reset(TFunctor* functor);
 
 	// Resets this delegate to a new free/static function
 	void reset(TReturn(*freeFunction)(TArgs...));
@@ -41,7 +47,7 @@ public:
 	void reset(TReturn(TClass::*memberConstFunction)(TArgs...) const, TClass* instance);
 
 private:
-	DynamicFunctorPointer m_functor;
+	TFunctorSharedPtr m_functor;
 };
 
 #include "Inline\Delegate.inl"
