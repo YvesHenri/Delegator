@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <functional>
 
 #include "..\Includes\Delegate\Delegate.h"
 
@@ -35,6 +36,10 @@ int main()
 
 	{
 		Delegate<void(void)> d1;
+		std::function<void(void)> f1;
+
+		printf("Size: %d \n", sizeof(d1));
+		printf("Size: %d \n", sizeof(f1));
 
 		{
 			Delegate<void(void)> d2;

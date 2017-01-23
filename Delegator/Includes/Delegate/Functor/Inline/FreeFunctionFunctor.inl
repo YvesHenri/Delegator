@@ -1,3 +1,6 @@
+#ifndef FREE_FUNCTION_FUNCTOR_IMPL
+#define FREE_FUNCTION_FUNCTOR_IMPL
+
 template <typename TReturn, typename... TArgs>
 FreeFunctionFunctor<TReturn(TArgs...)>::FreeFunctionFunctor(const FreeFunction function)
 	: m_function(function)
@@ -25,3 +28,5 @@ TReturn FreeFunctionFunctor<TReturn(TArgs...)>::operator()(TArgs&&... args)
 
 	return m_function(std::forward<TArgs>(args)...);
 }
+
+#endif
