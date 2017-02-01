@@ -5,15 +5,7 @@ template <class TClass, typename TReturn, typename... TArgs>
 MemberFunctionFunctor<TReturn(TClass::*)(TArgs...)>::MemberFunctionFunctor(const MemberFunction function, const MemberInstance instance)
 	: m_function(function)
 	, m_instance(instance)
-{
-	printf("+++ MemberFunctionFunctor +++\n");
-}
-
-template <class TClass, typename TReturn, typename... TArgs>
-MemberFunctionFunctor<TReturn(TClass::*)(TArgs...)>::~MemberFunctionFunctor()
-{
-	printf("--- MemberFunctionFunctor ---\n");
-}
+{}
 
 template <class TClass, typename TReturn, typename... TArgs>
 bool MemberFunctionFunctor<TReturn(TClass::*)(TArgs...)>::operator==(const Functor<TReturn(TArgs...)>& functor)

@@ -4,15 +4,7 @@
 template <typename TReturn, typename... TArgs>
 FreeFunctionFunctor<TReturn(TArgs...)>::FreeFunctionFunctor(const FreeFunction function)
 	: m_function(function)
-{
-	printf("+++ FreeFunctionFunctor +++\n");
-}
-
-template <typename TReturn, typename... TArgs>
-FreeFunctionFunctor<TReturn(TArgs...)>::~FreeFunctionFunctor()
-{
-	printf("--- FreeFunctionFunctor ---\n");
-}
+{}
 
 template <typename TReturn, typename... TArgs>
 bool FreeFunctionFunctor<TReturn(TArgs...)>::operator==(const Functor<TReturn(TArgs...)>& functor)

@@ -17,7 +17,7 @@ private:
 
 public:
 	explicit MemberFunctionFunctor(const MemberFunction function, const MemberInstance instance);
-	~MemberFunctionFunctor();
+	~MemberFunctionFunctor() = default;
 
 	bool operator == (const Functor<TReturn(TArgs...)>& functor) override;
 

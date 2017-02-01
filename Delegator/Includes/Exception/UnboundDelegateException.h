@@ -1,7 +1,6 @@
 #ifndef UNBOUND_DELEGATE_EXCEPTION_H
 #define UNBOUND_DELEGATE_EXCEPTION_H
 
-#include <stdio.h> // Debug
 #include <exception>
 
 class UnboundDelegateException final : public std::exception

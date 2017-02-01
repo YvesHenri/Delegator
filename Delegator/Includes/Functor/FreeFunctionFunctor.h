@@ -16,7 +16,7 @@ private:
 
 public:
 	explicit FreeFunctionFunctor(const FreeFunction function);
-	~FreeFunctionFunctor();
+	~FreeFunctionFunctor() = default;
 
 	bool operator == (const Functor<TReturn(TArgs...)>& functor) override;
 
