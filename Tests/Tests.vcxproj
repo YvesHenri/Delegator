@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{950E51DC-EE49-4236-98A6-96E3D806E9D1}</ProjectGuid>
+    <ProjectGuid>{64CD5C2C-DDEB-49DD-B0D0-76A8D3702CD1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Tests</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>Tests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -149,16 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Includes\Functor\LoggableFreeFunctionFunctor.h" />
-    <ClInclude Include="Includes\Functor\LoggableMemberConstFunctionFunctor.h" />
-    <ClInclude Include="Includes\Functor\LoggableMemberFunctionFunctor.h" />
-    <ClInclude Include="Includes\LoggableDelegate.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Includes\Inline\LoggableDelegate.inl" />
+    <ClCompile Include="Sources\Tests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
