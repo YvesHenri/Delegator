@@ -15,41 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Includes\Delegate\Delegate.h">
+    <ClInclude Include="Includes\Exception\UnboundDelegateException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Delegate\Functor\Functor.h">
+    <ClInclude Include="Includes\Functor\FreeFunctionFunctor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Delegate\Functor\FreeFunctionFunctor.h">
+    <ClInclude Include="Includes\Functor\Functor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Delegate\Exception\UnboundDelegateException.h">
+    <ClInclude Include="Includes\Functor\MemberConstFunctionFunctor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Delegate\Functor\MemberFunctionFunctor.h">
+    <ClInclude Include="Includes\Functor\MemberFunctionFunctor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Delegate\Functor\MemberConstFunctionFunctor.h">
+    <ClInclude Include="Includes\Delegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Includes\Delegate\Functor\Inline\FreeFunctionFunctor.inl">
+    <None Include="Includes\Functor\Inline\FreeFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Delegate\Inline\Delegate.inl">
+    <None Include="Includes\Functor\Inline\MemberConstFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Delegate\Functor\Inline\MemberFunctionFunctor.inl">
+    <None Include="Includes\Functor\Inline\MemberFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Delegate\Functor\Inline\MemberConstFunctionFunctor.inl">
+    <None Include="Includes\Inline\Delegate.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

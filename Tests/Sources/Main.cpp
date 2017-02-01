@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <functional>
-
-#include "..\Includes\Delegate\Delegate.h"
+#include "..\..\Delegator\Includes\Delegate.h"
 
 #define COMPARE(d1, d2) compare(#d1, #d2, d1, d2)
 void compare(char* d1n, char* d2n, Delegate<void(void)>& d1, Delegate<void(void)>& d2)
@@ -236,6 +233,5 @@ int main()
 	//runCyclicResetTest();
 	runEqualityTest();
 
-    return getchar();
+	return getchar();
 }
-
