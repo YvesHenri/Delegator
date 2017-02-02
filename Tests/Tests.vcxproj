@@ -148,7 +148,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Tests.cpp" />
+    <ClCompile Include="Sources\DummyClass.cpp" />
+    <ClCompile Include="Sources\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Includes\DummyClass.h" />
+    <ClInclude Include="Includes\Functor\LoggableFunctor.h" />
+    <ClInclude Include="Includes\LoggableDelegate.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Includes\Functor\Inline\LoggableFunctor.inl" />
+    <None Include="Includes\Inline\LoggableDelegate.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

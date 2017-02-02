@@ -19,8 +19,7 @@ public:
 	explicit MemberConstFunctionFunctor(const MemberConstFunction function, const MemberConstInstance instance);
 	~MemberConstFunctionFunctor() = default;
 
-	bool operator == (const Functor<TReturn(TArgs...)>& functor) override;
-
+	bool	operator ==(const Functor<TReturn(TArgs...)>& functor) override;
 	TReturn operator ()(TArgs&&... args) override;
 
 private:
