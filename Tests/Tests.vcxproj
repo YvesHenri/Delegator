@@ -155,6 +155,7 @@
     <ClInclude Include="Includes\DummyClass.h" />
     <ClInclude Include="Includes\Functor\LoggableFunctor.h" />
     <ClInclude Include="Includes\LoggableDelegate.h" />
+    <ClInclude Include="Includes\Macros.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Includes\Functor\Inline\LoggableFunctor.inl" />
