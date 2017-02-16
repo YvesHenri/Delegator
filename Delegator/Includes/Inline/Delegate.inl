@@ -60,7 +60,7 @@ void Delegate<TReturn(TArgs...)>::reset(TReturn(TClass::*memberConstFunction)(TA
 }
 
 template <typename TReturn, typename... TArgs>
-TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs&&... args)
+TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs&... args)
 {
 	if (!m_functor)
 		throw UnboundDelegateException();
@@ -69,7 +69,7 @@ TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs&&... args)
 }
 
 template <typename TReturn, typename... TArgs>
-bool Delegate<TReturn(TArgs...)>::operator==(const Delegate& delegate)
+bool Delegate<TReturn(TArgs...)>::operator==(const Delegate<TReturn(TArgs...)>& delegate)
 {
 	TFunctor* self = m_functor.get();
 	TFunctor* target = delegate.m_functor.get();
