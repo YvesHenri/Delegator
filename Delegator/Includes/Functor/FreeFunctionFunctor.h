@@ -1,6 +1,7 @@
 #ifndef FREE_FUNCTION_FUNCTOR_H
 #define FREE_FUNCTION_FUNCTOR_H
 
+#include "Macros.h"
 #include "Functor.h"
 
 // Non specialized template declaration for a free function functor (empty)
@@ -9,7 +10,7 @@ class FreeFunctionFunctor;
 
 // Specialization for free functions functor
 template <typename TReturn, typename... TArgs>
-class FreeFunctionFunctor<TReturn(TArgs...)> final : public Functor<TReturn(TArgs...)>
+class DELEGATOR_API FreeFunctionFunctor<TReturn(TArgs...)> final : public Functor<TReturn(TArgs...)>
 {
 private:
 	using FreeFunction = TReturn(*)(TArgs...);

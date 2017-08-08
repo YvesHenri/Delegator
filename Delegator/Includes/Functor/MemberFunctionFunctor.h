@@ -1,6 +1,7 @@
 #ifndef MEMBER_FUNCTION_FUNCTOR_H
 #define MEMBER_FUNCTION_FUNCTOR_H
 
+#include "Macros.h"
 #include "Functor.h"
 
 // Non specialized template declaration (empty)
@@ -9,7 +10,7 @@ class MemberFunctionFunctor;
 
 // Specialization for member functions functors
 template <class TClass, typename TReturn, typename... TArgs>
-class MemberFunctionFunctor<TReturn(TClass::*)(TArgs...)> final : public Functor<TReturn(TArgs...)>
+class DELEGATOR_API MemberFunctionFunctor<TReturn(TClass::*)(TArgs...)> final : public Functor<TReturn(TArgs...)>
 {
 private:
 	using MemberInstance = TClass*;

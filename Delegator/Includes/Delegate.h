@@ -3,6 +3,7 @@
 
 #include <memory>
 
+#include "Macros.h"
 #include "Functor\FreeFunctionFunctor.h"
 #include "Functor\MemberFunctionFunctor.h"
 #include "Functor\MemberConstFunctionFunctor.h"
@@ -13,7 +14,7 @@ class Delegate;
 
 // Specialization for a delegate
 template <typename TReturn, typename... TArgs>
-class Delegate<TReturn(TArgs...)> final
+class DELEGATOR_API Delegate<TReturn(TArgs...)> final
 {
 private:
 	using TFunctor = Functor<TReturn(TArgs...)>;

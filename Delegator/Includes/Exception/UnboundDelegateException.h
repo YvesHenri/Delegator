@@ -3,7 +3,9 @@
 
 #include <exception>
 
-class UnboundDelegateException final : public std::exception
+#include "Macros.h"
+
+class DELEGATOR_API UnboundDelegateException final : public std::exception
 {
 public:
 	UnboundDelegateException() : std::exception("Unbound delegate")
