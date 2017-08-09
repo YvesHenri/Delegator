@@ -25,7 +25,7 @@ template <typename TReturn, typename... TArgs>
 TReturn FreeFunctionFunctor<TReturn(TArgs...)>::operator()(TArgs&&... args)
 {
 	if (m_function == nullptr)
-		throw UnboundDelegateException();
+		throw std::exception("Unbound delegate");
 
 	return m_function(std::forward<TArgs>(args)...);
 }

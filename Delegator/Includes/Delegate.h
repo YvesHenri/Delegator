@@ -53,10 +53,10 @@ public:
 	void reset(TReturn(TClass::*memberConstFunction)(TArgs...) const, TClass* instance);
 
 	// Invokes this delegate
-	TReturn invoke(TArgs&... args);
+	TReturn invoke(TArgs... args);
 
 	// Checks whether both delegates point to the same function
-	bool operator == (const Delegate<TReturn(TArgs...)>& delegate);
+	bool operator==(const Delegate<TReturn(TArgs...)>& delegate);
 
 private:
 	TFunctorSharedPtr m_functor;

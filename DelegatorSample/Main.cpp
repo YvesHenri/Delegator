@@ -27,5 +27,6 @@ void free()
 int main()
 {
 	free();
+
 	return getchar();
 }

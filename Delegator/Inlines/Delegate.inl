@@ -60,10 +60,10 @@ void Delegate<TReturn(TArgs...)>::reset(TReturn(TClass::*memberConstFunction)(TA
 }
 
 template <typename TReturn, typename... TArgs>
-TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs&... args)
+TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs... args)
 {
 	if (!m_functor)
-		throw UnboundDelegateException();
+		throw std::exception("Unbound delegate");
 
 	return m_functor->operator()(std::forward<TArgs>(args)...);
 }

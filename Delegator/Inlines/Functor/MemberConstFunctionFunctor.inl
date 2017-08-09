@@ -25,8 +25,10 @@ bool MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator==(
 template <class TClass, typename TReturn, typename... TArgs>
 TReturn MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const>::operator()(TArgs&&... args)
 {
-	if (m_function == nullptr || m_instance == nullptr)
-		throw UnboundDelegateException();
+	if (m_function == nullptr)
+		throw std::exception("Unbound delegate");
+	if (m_instance == nullptr)
+		throw std::exception("Invalid member instance");
 
 	return (m_instance->*m_function)(std::forward<TArgs>(args)...);
 }
