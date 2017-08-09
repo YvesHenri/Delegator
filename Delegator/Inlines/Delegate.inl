@@ -65,7 +65,7 @@ TReturn Delegate<TReturn(TArgs...)>::invoke(TArgs&... args)
 	if (!m_functor)
 		throw UnboundDelegateException();
 
-	m_functor->operator()(std::forward<TArgs>(args)...);
+	return m_functor->operator()(std::forward<TArgs>(args)...);
 }
 
 template <typename TReturn, typename... TArgs>

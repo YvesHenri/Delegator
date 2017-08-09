@@ -14,7 +14,10 @@ class Functor<TReturn(TArgs...)>
 public:
 	virtual ~Functor() = default;
 
-	virtual bool	operator ==(const Functor<TReturn(TArgs...)>& functor) = 0;
+	// Checks whether both functors point to the same function
+	virtual bool operator ==(const Functor<TReturn(TArgs...)>& functor) = 0;
+
+	// Executes the internally stored function
 	virtual TReturn operator ()(TArgs&&... args) = 0;
 };
 

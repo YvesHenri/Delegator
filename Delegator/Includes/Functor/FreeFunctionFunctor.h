@@ -19,13 +19,13 @@ public:
 	explicit FreeFunctionFunctor(const FreeFunction function);
 	~FreeFunctionFunctor() = default;
 
-	bool	operator ==(const Functor<TReturn(TArgs...)>& functor) override;
+	bool operator ==(const Functor<TReturn(TArgs...)>& functor) override;
 	TReturn operator ()(TArgs&&... args) override;
 
 private:
 	const FreeFunction m_function;
 };
 
-#include "Inline\FreeFunctionFunctor.inl"
+#include "..\Inlines\Functor\FreeFunctionFunctor.inl"
 
 #endif

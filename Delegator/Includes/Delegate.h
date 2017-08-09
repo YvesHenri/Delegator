@@ -62,6 +62,6 @@ private:
 	TFunctorSharedPtr m_functor;
 };
 
-#include "Inline\Delegate.inl"
+#include "..\Inlines\Delegate.inl"
 
 #endif

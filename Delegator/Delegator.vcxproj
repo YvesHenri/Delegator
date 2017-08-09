@@ -296,10 +296,10 @@
     <ClInclude Include="Includes\Functor\MemberFunctionFunctor.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Includes\Functor\Inline\FreeFunctionFunctor.inl" />
-    <None Include="Includes\Functor\Inline\MemberConstFunctionFunctor.inl" />
-    <None Include="Includes\Functor\Inline\MemberFunctionFunctor.inl" />
-    <None Include="Includes\Inline\Delegate.inl" />
+    <None Include="Inlines\Delegate.inl" />
+    <None Include="Inlines\Functor\FreeFunctionFunctor.inl" />
+    <None Include="Inlines\Functor\MemberConstFunctionFunctor.inl" />
+    <None Include="Inlines\Functor\MemberFunctionFunctor.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\Main.cpp" />

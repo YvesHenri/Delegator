@@ -38,17 +38,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Includes\Inline\Delegate.inl">
-      <Filter>Source Files</Filter>
+    <None Include="Inlines\Delegate.inl">
+      <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Functor\Inline\FreeFunctionFunctor.inl">
-      <Filter>Source Files</Filter>
+    <None Include="Inlines\Functor\MemberFunctionFunctor.inl">
+      <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Functor\Inline\MemberConstFunctionFunctor.inl">
-      <Filter>Source Files</Filter>
+    <None Include="Inlines\Functor\MemberConstFunctionFunctor.inl">
+      <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Functor\Inline\MemberFunctionFunctor.inl">
-      <Filter>Source Files</Filter>
+    <None Include="Inlines\Functor\FreeFunctionFunctor.inl">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
