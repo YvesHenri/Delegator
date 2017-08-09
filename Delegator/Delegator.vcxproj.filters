@@ -33,19 +33,27 @@
     <ClInclude Include="Includes\Delegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Includes\Macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Includes\Functor\Inline\FreeFunctionFunctor.inl">
+    <None Include="Inlines\Delegate.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Functor\Inline\MemberConstFunctionFunctor.inl">
+    <None Include="Inlines\Functor\MemberFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Functor\Inline\MemberFunctionFunctor.inl">
+    <None Include="Inlines\Functor\MemberConstFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Includes\Inline\Delegate.inl">
+    <None Include="Inlines\Functor\FreeFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

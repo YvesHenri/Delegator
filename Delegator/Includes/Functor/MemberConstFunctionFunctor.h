@@ -1,6 +1,7 @@
 #ifndef MEMBER_CONST_FUNCTION_FUNCTOR_H
 #define MEMBER_CONST_FUNCTION_FUNCTOR_H
 
+#include "Macros.h"
 #include "Functor.h"
 
 // Non specialized template declaration (empty)
@@ -9,7 +10,7 @@ class MemberConstFunctionFunctor;
 
 // Specialization for member const functions
 template <class TClass, typename TReturn, typename... TArgs>
-class MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const> final : public Functor<TReturn(TArgs...)>
+class DELEGATOR_API MemberConstFunctionFunctor<TReturn(TClass::*)(TArgs...) const> final : public Functor<TReturn(TArgs...)>
 {
 private:
 	using MemberConstInstance = const TClass*;
@@ -19,14 +20,14 @@ public:
 	explicit MemberConstFunctionFunctor(const MemberConstFunction function, const MemberConstInstance instance);
 	~MemberConstFunctionFunctor() = default;
 
-	bool	operator ==(const Functor<TReturn(TArgs...)>& functor) override;
-	TReturn operator ()(TArgs&&... args) override;
+	bool operator==(const Functor<TReturn(TArgs...)>& functor) override;
+	TReturn operator()(TArgs&&... args) override;
 
 private:
 	const MemberConstInstance m_instance;
 	const MemberConstFunction m_function;
 };
 
-#include "Inline\MemberConstFunctionFunctor.inl"
+#include "..\Inlines\Functor\MemberConstFunctionFunctor.inl"
 
 #endif

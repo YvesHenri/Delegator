@@ -3,6 +3,7 @@
 
 #include <memory>
 
+#include "Macros.h"
 #include "Functor\FreeFunctionFunctor.h"
 #include "Functor\MemberFunctionFunctor.h"
 #include "Functor\MemberConstFunctionFunctor.h"
@@ -13,7 +14,7 @@ class Delegate;
 
 // Specialization for a delegate
 template <typename TReturn, typename... TArgs>
-class Delegate<TReturn(TArgs...)> final
+class DELEGATOR_API Delegate<TReturn(TArgs...)> final
 {
 private:
 	using TFunctor = Functor<TReturn(TArgs...)>;
@@ -52,15 +53,15 @@ public:
 	void reset(TReturn(TClass::*memberConstFunction)(TArgs...) const, TClass* instance);
 
 	// Invokes this delegate
-	TReturn invoke(TArgs&... args);
+	TReturn invoke(TArgs... args);
 
 	// Checks whether both delegates point to the same function
-	bool operator == (const Delegate<TReturn(TArgs...)>& delegate);
+	bool operator==(const Delegate<TReturn(TArgs...)>& delegate);
 
 private:
 	TFunctorSharedPtr m_functor;
 };
 
-#include "Inline\Delegate.inl"
+#include "..\Inlines\Delegate.inl"
 
 #endif
