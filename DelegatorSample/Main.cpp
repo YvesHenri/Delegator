@@ -1,16 +1,31 @@
 #include <stdio.h>
-#include "Delegate.h"
+#include <Delegate.h>
 
-int meep()
+#include "Clazz.h"
+
+void member()
 {
-	return 123;
+	Clazz clazz;
+
+	Delegate<void()> staticFunctionDelegate(&Clazz::staticMemberFunction);
+	Delegate<void()> memberFunctionDelegate(&Clazz::memberFunction, &clazz);
+	Delegate<void()> memberConstFunctionDelegate(&Clazz::memberConstFunction, &clazz);
+
+	staticFunctionDelegate.invoke();
+	memberFunctionDelegate.invoke();
+	memberConstFunctionDelegate.invoke();
+}
+
+void free()
+{
+	Delegate<void()> freeFunctionDelegate(&member);
+
+	// This will trigger the member functions example
+	freeFunctionDelegate.invoke();
 }
 
 int main()
 {
-	Delegate<int()> temp(&meep);
-
-	printf("Result: %d\n", temp.invoke());
-
+	free();
 	return getchar();
 }
