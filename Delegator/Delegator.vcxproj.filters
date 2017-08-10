@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Includes\Exception\UnboundDelegateException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Includes\Functor\FreeFunctionFunctor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
