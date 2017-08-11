@@ -49,7 +49,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Sources\Main.cpp">
+    <ClCompile Include="Sources\Library.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
