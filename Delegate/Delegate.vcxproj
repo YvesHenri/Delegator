@@ -288,7 +288,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Includes\Macros.h" />
     <ClInclude Include="Includes\Delegate.h" />
     <ClInclude Include="Includes\Functor\FreeFunctionFunctor.h" />
     <ClInclude Include="Includes\Functor\Functor.h" />
@@ -300,9 +299,6 @@
     <None Include="Inlines\Functor\FreeFunctionFunctor.inl" />
     <None Include="Inlines\Functor\MemberConstFunctionFunctor.inl" />
     <None Include="Inlines\Functor\MemberFunctionFunctor.inl" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Sources\Library.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
