@@ -30,9 +30,6 @@
     <ClInclude Include="Includes\Delegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Includes\Macros.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Inlines\Delegate.inl">
@@ -47,10 +44,5 @@
     <None Include="Inlines\Functor\FreeFunctionFunctor.inl">
       <Filter>Header Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Sources\Library.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
